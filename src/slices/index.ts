@@ -4,6 +4,10 @@ import dynamic from "next/dynamic";
 
 export const components = {
   about_section: dynamic(() => import("./AboutSection")),
+  contact_section: dynamic(() => import("./ContactSection")),
   header_section: dynamic(() => import("./HeaderSection")),
+  project_section: dynamic(() => import("./ProjectSection")),
+  project_sectios: dynamic(() => import("./ProjectSectios")),
+  service_section: dynamic(() => import("./ServiceSection")),
   testimonial_section: dynamic(() => import("./TestimonialSection")),
 };

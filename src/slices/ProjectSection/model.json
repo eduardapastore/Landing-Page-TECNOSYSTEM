@@ -1,0 +1,16 @@
+{
+  "id": "project_section",
+  "type": "SharedSlice",
+  "name": "ProjectSection",
+  "description": "ProjectSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}
