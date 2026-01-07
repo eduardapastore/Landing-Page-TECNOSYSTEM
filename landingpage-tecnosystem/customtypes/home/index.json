@@ -1,31 +1,16 @@
 {
   "id": "home",
+  "label": "home",
+  "repeatable": false,
+  "status": true,
+  "format": "page",
   "json": {
     "Main": {
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "contact_section": {
-              "type": "SharedSlice"
-            },
-            "project_section": {
-              "type": "SharedSlice"
-            },
-            "service_section": {
-              "type": "SharedSlice"
-            },
-            "header_section": {
-              "type": "SharedSlice"
-            },
-            "testimonial_section": {
-              "type": "SharedSlice"
-            },
-            "about_section": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     },
@@ -56,9 +41,5 @@
         "type": "Text"
       }
     }
-  },
-  "label": "home",
-  "repeatable": false,
-  "status": true,
-  "format": "page"
+  }
 }
