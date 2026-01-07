@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-Br">
+    <html lang="pt-Br" >
       <body className={clsx(dmSans.className)}>
         <div className='font-dmSans'><Header /></div>
         {children}
