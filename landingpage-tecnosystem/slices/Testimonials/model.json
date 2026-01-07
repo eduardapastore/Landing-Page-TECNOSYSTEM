@@ -10,7 +10,46 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {
+        "topic_title": {
+          "type": "Link",
+          "config": {
+            "label": "Topic Title",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              {
+                "id": "topic",
+                "fields": [
+                  "title",
+                  "subtitle"
+                ]
+              }
+            ]
+          }
+        },
+        "testimonial": {
+          "type": "Link",
+          "config": {
+            "label": "Testimonial",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              {
+                "id": "testimonials",
+                "fields": [
+                  "name",
+                  "enterprise_name",
+                  "quote",
+                  "avatar"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

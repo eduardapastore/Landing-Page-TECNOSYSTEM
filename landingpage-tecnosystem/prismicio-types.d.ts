@@ -70,137 +70,71 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 /**
- * Item in *FloatWpp → whatsapp*
+ * Item in *home → Navigation*
  */
-export interface FloatwppDocumentDataWhatsappItem {
+export interface HomeDocumentDataNavigationItem {
   /**
-   * link field in *FloatWpp → whatsapp*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: floatwpp.whatsapp[].link
-   * - **Documentation**: https://prismic.io/docs/fields/link
-   */
-  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
-  /**
-   * icon field in *FloatWpp → whatsapp*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: 1
-   * - **API ID Path**: floatwpp.whatsapp[].icon
-   * - **Documentation**: https://prismic.io/docs/fields/select
-   */
-  icon: prismic.SelectField<"1" | "0", "filled">;
-}
-
-/**
- * Content for FloatWpp documents
- */
-interface FloatwppDocumentData {
-  /**
-   * whatsapp field in *FloatWpp*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: floatwpp.whatsapp[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
-   */
-  whatsapp: prismic.GroupField<Simplify<FloatwppDocumentDataWhatsappItem>>;
-}
-
-/**
- * FloatWpp document from Prismic
- *
- * - **API ID**: `floatwpp`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/content-modeling
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type FloatwppDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<FloatwppDocumentData>,
-    "floatwpp",
-    Lang
-  >;
-
-/**
- * Item in *footer → social*
- */
-export interface FooterDocumentDataSocialItem {
-  /**
-   * label field in *footer → social*
+   * Label field in *home → Navigation*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer.social[].label
+   * - **API ID Path**: home.navigation[].label
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   label: prismic.KeyTextField;
 
   /**
-   * link field in *footer → social*
+   * Link field in *home → Navigation*
    *
    * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.social[].link
+   * - **Placeholder**: Adicione o seu link
+   * - **API ID Path**: home.navigation[].link
    * - **Documentation**: https://prismic.io/docs/fields/link
    */
-  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
-  /**
-   * Icon field in *footer → social*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: 1
-   * - **API ID Path**: footer.social[].icon
-   * - **Documentation**: https://prismic.io/docs/fields/select
-   */
-  icon: prismic.SelectField<"1" | "2" | "3" | "4", "filled">;
-}
-
-/**
- * Content for footer documents
- */
-interface FooterDocumentData {
-  /**
-   * social field in *footer*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.social[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
-   */
-  social: prismic.GroupField<Simplify<FooterDocumentDataSocialItem>>;
-}
-
-/**
- * footer document from Prismic
- *
- * - **API ID**: `footer`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/content-modeling
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type FooterDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<FooterDocumentData>,
-    "footer",
-    Lang
+  link: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
   >;
+}
 
-type HomeDocumentDataSlicesSlice = never;
+type HomeDocumentDataSlicesSlice = TestimonialsSlice;
 
 /**
  * Content for home documents
  */
 interface HomeDocumentData {
+  /**
+   * Name field in *home*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Adicione o Nome de sua Empresa
+   * - **API ID Path**: home.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  name: prismic.RichTextField;
+
+  /**
+   * Site Title field in *home*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Adicione o Título do seu Hero
+   * - **API ID Path**: home.site_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  site_title: prismic.RichTextField;
+
+  /**
+   * Navigation field in *home*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.navigation[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  navigation: prismic.GroupField<Simplify<HomeDocumentDataNavigationItem>>;
+
   /**
    * Slice Zone field in *home*
    *
@@ -257,88 +191,9 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 /**
- * Item in *NavBar → navigation*
- */
-export interface NavbarDocumentDataNavigationItem {
-  /**
-   * label field in *NavBar → navigation*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navbar.navigation[].label
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  label: prismic.KeyTextField;
-
-  /**
-   * link field in *NavBar → navigation*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navbar.navigation[].link
-   * - **Documentation**: https://prismic.io/docs/fields/link
-   */
-  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-}
-
-/**
- * Content for NavBar documents
- */
-interface NavbarDocumentData {
-  /**
-   * navigation field in *NavBar*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navbar.navigation[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
-   */
-  navigation: prismic.GroupField<Simplify<NavbarDocumentDataNavigationItem>>;
-}
-
-/**
- * NavBar document from Prismic
- *
- * - **API ID**: `navbar`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/content-modeling
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type NavbarDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<NavbarDocumentData>,
-    "navbar",
-    Lang
-  >;
-
-/**
  * Content for Testimonials documents
  */
 interface TestimonialsDocumentData {
-  /**
-   * Name field in *Testimonials*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.name
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  name: prismic.KeyTextField;
-
-  /**
-   * Enterprise Name field in *Testimonials*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.enterprise_name
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  enterprise_name: prismic.KeyTextField;
-
   /**
    * Quote field in *Testimonials*
    *
@@ -360,6 +215,28 @@ interface TestimonialsDocumentData {
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   avatar: prismic.ImageField<never>;
+
+  /**
+   * Name field in *Testimonials*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Enterprise Name field in *Testimonials*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.enterprise_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  enterprise_name: prismic.KeyTextField;
 }
 
 /**
@@ -378,12 +255,83 @@ export type TestimonialsDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for Topic documents
+ */
+interface TopicDocumentData {
+  /**
+   * Title field in *Topic*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: topic.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *Topic*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: topic.subtitle
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  subtitle: prismic.KeyTextField;
+}
+
+/**
+ * Topic document from Prismic
+ *
+ * - **API ID**: `topic`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TopicDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<TopicDocumentData>, "topic", Lang>;
+
 export type AllDocumentTypes =
-  | FloatwppDocument
-  | FooterDocument
   | HomeDocument
-  | NavbarDocument
-  | TestimonialsDocument;
+  | TestimonialsDocument
+  | TopicDocument;
+
+/**
+ * Primary content in *Testimonials → Default → Primary*
+ */
+export interface TestimonialsSliceDefaultPrimary {
+  /**
+   * Topic Title field in *Testimonials → Default → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.default.primary.topic_title
+   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   */
+  topic_title: ContentRelationshipFieldWithData<
+    [{ id: "topic"; fields: ["title", "subtitle"] }]
+  >;
+
+  /**
+   * Testimonial field in *Testimonials → Default → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.default.primary.testimonial
+   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   */
+  testimonial: ContentRelationshipFieldWithData<
+    [
+      {
+        id: "testimonials";
+        fields: ["name", "enterprise_name", "quote", "avatar"];
+      },
+    ]
+  >;
+}
 
 /**
  * Default variation for Testimonials Slice
@@ -394,7 +342,7 @@ export type AllDocumentTypes =
  */
 export type TestimonialsSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<TestimonialsSliceDefaultPrimary>,
   never
 >;
 
@@ -436,22 +384,17 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      FloatwppDocument,
-      FloatwppDocumentData,
-      FloatwppDocumentDataWhatsappItem,
-      FooterDocument,
-      FooterDocumentData,
-      FooterDocumentDataSocialItem,
       HomeDocument,
       HomeDocumentData,
+      HomeDocumentDataNavigationItem,
       HomeDocumentDataSlicesSlice,
-      NavbarDocument,
-      NavbarDocumentData,
-      NavbarDocumentDataNavigationItem,
       TestimonialsDocument,
       TestimonialsDocumentData,
+      TopicDocument,
+      TopicDocumentData,
       AllDocumentTypes,
       TestimonialsSlice,
+      TestimonialsSliceDefaultPrimary,
       TestimonialsSliceVariation,
       TestimonialsSliceDefault,
     };
