@@ -1,13 +1,20 @@
+// Metadata Imports
 import type { Metadata, ResolvingMetadata } from 'next'
-import { DM_Sans, Righteous } from "next/font/google";
 import clsx from "clsx";
+
+// Styles imports
+import { DM_Sans, Righteous } from "next/font/google";
 import "./globals.css";
+
+// Prismic imports
 import { notFound } from "next/navigation";
 import { asImageSrc } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
 
+// Components imports
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -46,10 +53,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-Br">
-      <body className={clsx(dmSans.className, righteous.className)}>
-        <header>Header</header>
+      <body className={clsx(dmSans.className)}>
+        <div className='font-dmSans'><Header /></div>
         {children}
-        <footer>Footer</footer>
+        <Footer />
       </body>
     </html>
   );

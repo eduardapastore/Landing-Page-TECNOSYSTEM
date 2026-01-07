@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+.font-dm {
+  font-family: var(--font-dm-sans);
+}
+
+.font-righteous {
+  font-family: var(--font-righteous);
+}
