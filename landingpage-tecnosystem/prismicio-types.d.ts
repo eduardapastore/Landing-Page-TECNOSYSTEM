@@ -105,6 +105,17 @@ type HomeDocumentDataSlices1Slice = TestimonialsSlice;
  */
 interface HomeDocumentData {
   /**
+   * tslogo field in *home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.tslogo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  tslogo: prismic.ImageField<never>;
+
+  /**
    * Name field in *home*
    *
    * - **Field Type**: Rich Text
@@ -202,82 +213,6 @@ interface HomeDocumentData {
  */
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
-
-type HomepageDocumentDataSlicesSlice = never;
-
-/**
- * Content for Homepage documents
- */
-interface HomepageDocumentData {
-  /**
-   * Title field in *Homepage*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * Slice Zone field in *Homepage*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/slices
-   */
-  slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice>; /**
-   * Meta Title field in *Homepage*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: homepage.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  meta_title: prismic.KeyTextField;
-
-  /**
-   * Meta Description field in *Homepage*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: homepage.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *Homepage*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  meta_image: prismic.ImageField<never>;
-}
-
-/**
- * Homepage document from Prismic
- *
- * - **API ID**: `homepage`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/content-modeling
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type HomepageDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<HomepageDocumentData>,
-    "homepage",
-    Lang
-  >;
 
 /**
  * Content for Testimonials documents
@@ -383,11 +318,179 @@ interface TopicDocumentData {
 export type TopicDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<TopicDocumentData>, "topic", Lang>;
 
+/**
+ * Item in *topicos → textos*
+ */
+export interface TopicosDocumentDataTextosItem {
+  /**
+   * textos field in *topicos → textos*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: topicos.textos[].textos
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  textos: prismic.KeyTextField;
+}
+
+/**
+ * Content for topicos documents
+ */
+interface TopicosDocumentData {
+  /**
+   * textos field in *topicos*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: topicos.textos[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  textos: prismic.GroupField<Simplify<TopicosDocumentDataTextosItem>>;
+}
+
+/**
+ * topicos document from Prismic
+ *
+ * - **API ID**: `topicos`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TopicosDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<TopicosDocumentData>,
+    "topicos",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | HomeDocument
-  | HomepageDocument
   | TestimonialsDocument
-  | TopicDocument;
+  | TopicDocument
+  | TopicosDocument;
+
+/**
+ * Item in *Hero → Default → Primary → Topicos Hero*
+ */
+export interface HeroSliceDefaultPrimaryTopicosHeroItem {
+  /**
+   * Texto field in *Hero → Default → Primary → Topicos Hero*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.topicos_hero[].texto
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  texto: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Hero → Default → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+  /**
+   * Nome da Empresa field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Adicione o nome da empresa
+   * - **API ID Path**: hero.default.primary.nome_da_empresa
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  nome_da_empresa: prismic.RichTextField;
+
+  /**
+   * Hero Text field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Adicione o Título do seu Hero
+   * - **API ID Path**: hero.default.primary.hero_text
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  hero_text: prismic.RichTextField;
+
+  /**
+   * Subtitulo field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.subtitulo
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  subtitulo: prismic.RichTextField;
+
+  /**
+   * Topicos Hero field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.topicos_hero[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  topicos_hero: prismic.GroupField<
+    Simplify<HeroSliceDefaultPrimaryTopicosHeroItem>
+  >;
+
+  /**
+   * Button Contate field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Botão para contato
+   * - **API ID Path**: hero.default.primary.button_contate
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  button_contate: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Button SaibaMais field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.button_saibamais
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  button_saibamais: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Hero*
+ */
+type HeroSliceVariation = HeroSliceDefault;
+
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
  * Primary content in *Testimonials → Default → Primary*
@@ -479,14 +582,19 @@ declare module "@prismicio/client" {
       HomeDocumentDataNavigationItem,
       HomeDocumentDataSlicesSlice,
       HomeDocumentDataSlices1Slice,
-      HomepageDocument,
-      HomepageDocumentData,
-      HomepageDocumentDataSlicesSlice,
       TestimonialsDocument,
       TestimonialsDocumentData,
       TopicDocument,
       TopicDocumentData,
+      TopicosDocument,
+      TopicosDocumentData,
+      TopicosDocumentDataTextosItem,
       AllDocumentTypes,
+      HeroSlice,
+      HeroSliceDefaultPrimaryTopicosHeroItem,
+      HeroSliceDefaultPrimary,
+      HeroSliceVariation,
+      HeroSliceDefault,
       TestimonialsSlice,
       TestimonialsSliceDefaultPrimary,
       TestimonialsSliceVariation,

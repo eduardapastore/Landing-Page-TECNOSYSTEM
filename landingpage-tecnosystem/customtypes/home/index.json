@@ -6,6 +6,14 @@
   "format": "page",
   "json": {
     "Main": {
+      "tslogo": {
+        "type": "Image",
+        "config": {
+          "label": "tslogo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "name": {
         "type": "StructuredText",
         "config": {

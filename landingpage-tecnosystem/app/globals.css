@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Righteous&display=swap');
+@import "bootstrap-icons/font/bootstrap-icons.css";
 @import "tailwindcss";
 
 body,html{
@@ -9,5 +11,5 @@ body,html{
 }
 
 .font-righteous {
-  font-family: var(--font-righteous);
+  font-family: "Righteous", sans-serif;
 }

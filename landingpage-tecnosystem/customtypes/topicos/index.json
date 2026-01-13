@@ -1,0 +1,27 @@
+{
+  "format": "custom",
+  "id": "topicos",
+  "label": "topicos",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "textos": {
+        "type": "Group",
+        "config": {
+          "label": "textos",
+          "repeat": true,
+          "fields": {
+            "textos": {
+              "type": "Text",
+              "config": {
+                "label": "textos",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ import clsx from "clsx";
 // Styles imports
 import { DM_Sans, Righteous } from "next/font/google";
 import "./globals.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 // Prismic imports
 import { notFound } from "next/navigation";
@@ -54,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="pt-Br" >
       <body className={clsx(dmSans.className)}>
-        <div className='font-dmSans'><Header /></div>
+        <div className='font-dm'><Header /></div>
         {children}
         <Footer />
       </body>

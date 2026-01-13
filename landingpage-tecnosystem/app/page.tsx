@@ -8,13 +8,9 @@ import { components } from "@/slices";
 
 export default async function Page() {
   const client = createClient();
-  const page = await client.getSingle("homepage").catch(() => notFound());
+  const page = await client.getSingle("home").catch(() => notFound());
 
-  return (
-  <div className="m-16 text-red-600 font-black">
-    Funciona!
-  </div>
-  );
+  return SliceZone({ slices: page.data.slices, components: { ...components } });
 }
 
 export async function generateMetadata(): Promise<Metadata> {
