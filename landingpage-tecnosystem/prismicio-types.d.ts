@@ -96,7 +96,7 @@ export interface HomeDocumentDataNavigationItem {
   >;
 }
 
-type HomeDocumentDataSlicesSlice = TestimonialsSlice;
+type HomeDocumentDataSlicesSlice = HeroSlice | TestimonialsSlice;
 
 type HomeDocumentDataSlices1Slice = TestimonialsSlice;
 
@@ -409,16 +409,6 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   hero_text: prismic.RichTextField;
-
-  /**
-   * Subtitulo field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.subtitulo
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  subtitulo: prismic.RichTextField;
 
   /**
    * Topicos Hero field in *Hero → Default → Primary*

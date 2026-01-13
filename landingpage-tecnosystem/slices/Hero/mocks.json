@@ -17,8 +17,8 @@
 				]
 			},
 			"button_contate": {
-				"__TYPE__": "LinkContent",
 				"key": "027fc1b2-da06-4054-beec-0de479549b18",
+				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
 					"url": "http://google.com",
@@ -35,17 +35,6 @@
 							"spans": []
 						},
 						"direction": "ltr"
-					}
-				]
-			},
-			"subtitulo": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Et aute ut commodo cillum. Officia officia ullamco ea ullamco tempor ex."
-						}
 					}
 				]
 			},
@@ -139,8 +128,8 @@
 				]
 			},
 			"button_saibamais": {
-				"__TYPE__": "LinkContent",
 				"key": "e8b2e5c0-0e48-417f-8c4f-a67c9ae63657",
+				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
 					"url": "https://slicemachine.dev",

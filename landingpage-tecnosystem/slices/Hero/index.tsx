@@ -20,7 +20,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
     > 
     {/* Nome da Empresa */}
       <PrismicRichText field={slice.primary.nome_da_empresa} components={{
-        heading3: ({ children }) => <h3 className="text-lg mb-2 font-black text-red-600 font-righteous">{children}</h3>,
+        heading3: ({ children }) => <h3 className="text-3xl mb-2 font-black text-red-600 font-righteous">{children}</h3>,
       }}/> 
 
       {/* Títlo do Hero */}
@@ -28,7 +28,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         field={slice.primary.hero_text}
         components={{
           heading1: ({ children }) => (
-            <h1 className="text-6xl font-righteous font-bold mb-4 text-black">
+            <h1 className="text-8xl font-righteous font-bold mb-4 text-black">
               {children}
             </h1>
           ),
@@ -41,20 +41,24 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 
       {/* Tópicos de Subtítulo */}
       {slice.primary.topicos_hero.map((item, index) => (
-        <div className="flex gap-2">
-          <i className="bi bi-check-circle-fill text-red-600"></i>
-          <PrismicRichText key={index} field={item.texto} components={{ paragraph: ({ children }) => (
-            <p className="uppercase">
-              {children}
-            </p>
-          )}}/>
+        <div key={index} className="flex gap-2 items-start">
+          <i className="bi bi-check-circle-fill text-lg text-red-600"></i>
+          <PrismicRichText
+            field={item.texto}
+            components={{
+              paragraph: ({ children }) => (
+                <p className="uppercase text-lg">{children}</p>
+              ),
+            }}
+          />
         </div>
       ))}
 
+
       {/* botão contate-nos */}
-      <div className="flex gap-2 mt-6 text-md font-bold text-white">
-      <PrismicNextLink field={slice.primary.button_contate} className="p-2 bg-red-600 rounded-md" />
-      <PrismicNextLink field={slice.primary.button_saibamais} className="p-2 border border-red-600 text-red-600 rounded-md" />
+      <div className="flex gap-2 mt-6 text-md text-lg font-bold text-white">
+      <PrismicNextLink field={slice.primary.button_contate} className="p-3 pr-4 pl-4 bg-red-600 rounded-md" />
+      <PrismicNextLink field={slice.primary.button_saibamais} className="p-3 pr-4 pl-4 border border-red-600 text-red-600 rounded-md" />
       </div>
     </section>
   );
