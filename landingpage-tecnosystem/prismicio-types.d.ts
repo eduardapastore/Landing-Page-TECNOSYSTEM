@@ -430,16 +430,6 @@ export interface CtaFooterSliceDefaultPrimary {
   sub: prismic.RichTextField;
 
   /**
-   * button field in *CtaFooter → Default → Primary*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: cta_footer.default.primary.button
-   * - **Documentation**: https://prismic.io/docs/fields/link-to-media
-   */
-  button: prismic.LinkToMediaField<prismic.FieldState, never>;
-
-  /**
    * socials field in *CtaFooter → Default → Primary*
    *
    * - **Field Type**: Group
