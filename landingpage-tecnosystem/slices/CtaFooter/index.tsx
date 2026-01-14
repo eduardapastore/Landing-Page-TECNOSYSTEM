@@ -16,7 +16,7 @@ const CtaFooter: FC<CtaFooterProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="mx-24 relative overflow-hidden bg-red-600 rounded-xl p-4 flex"
+      className="mx-24 mt-12 relative overflow-hidden bg-red-600 rounded-xl pt-4 px-4 flex"
     >
       <div>
           <div className="flex gap-3 mb-2 m-4">
@@ -27,7 +27,7 @@ const CtaFooter: FC<CtaFooterProps> = ({ slice }) => {
               field={slice.primary.title}
               components={{
                 paragraph: ({ children }) => (
-                  <p className="text-white font-black text-3xl">
+                  <p className="text-white font-black text-4xl">
                     {children}
                   </p>
                 ),
@@ -37,7 +37,7 @@ const CtaFooter: FC<CtaFooterProps> = ({ slice }) => {
             {/* SUBÍTULO */}
             <PrismicRichText field={slice.primary.sub}  components={{
                 paragraph: ({ children }) => (
-                  <p className="text-white text-xl">
+                  <p className="text-white text-2xl">
                     {children}
                   </p>
                 ),
@@ -48,7 +48,7 @@ const CtaFooter: FC<CtaFooterProps> = ({ slice }) => {
 
         {/* FORMULÁRIO DE CONTATO */}
         <form
-          className="p-4 w-sm rounded-lg space-y-4 mb-16"
+          className="p-4 w-lg rounded-lg space-y-4 mx-auto block"
         >
           <input
             name="name"
@@ -74,22 +74,22 @@ const CtaFooter: FC<CtaFooterProps> = ({ slice }) => {
 
           <button
             type="submit"
-            className="bg-white text-red-600 font-bold px-10 py-2 rounded mx-auto block hover:shadow hover:shadow-2xl transition"
+            className="bg-white text-red-600 font-bold px-10 py-2 rounded mx-auto block hover:drop-shadow-2xl transition"
           >
             Enviar
           </button>
         </form>
 
         {/* BOTÕES DE REDES SOCIAIS */}
-        <div className="w-1/2 flex gap-2">
+        <div className="p-4 flex justify-between">
           {slice.primary.socials.map((item, index) => (
           <PrismicNextLink key={index} field={item.socials_link} >
-            <PrismicNextImage field={item.image} className="w-10 m-6"/>
+            <PrismicNextImage field={item.image} className="w-10 m-6 text-white"/>
           </PrismicNextLink>
         ))}
         </div>
       </div>
-      <img src="/ctaimage.png" alt="Programador" className="absolute right-0 top-0 rounded-lg"/>
+      <img src="/ctaimage.png" alt="Programador" className="absolute right-20 top-0 rounded-lg"/>
     </section>
   );
 };
