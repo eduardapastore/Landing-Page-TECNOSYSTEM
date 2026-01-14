@@ -3,16 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"title_text": {
-				"__TYPE__": "FieldContent",
-				"value": "bar",
-				"type": "Text"
-			},
-			"title_sub": {
-				"__TYPE__": "FieldContent",
-				"value": "his",
-				"type": "Text"
-			},
 			"form": {
 				"__TYPE__": "GroupContentType",
 				"value": [
@@ -27,8 +17,52 @@
 										{
 											"type": "paragraph",
 											"content": {
-												"text": "Lorem fugiat do dolore ea cillum officia exercitation in deserunt consectetur. Aliqua excepteur irure occaecat occaecat ad velit elit. Lorem occaecat exercitation ut deserunt proident."
-											}
+												"text": "Nome",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"text",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Email",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"text",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Número",
+												"spans": []
+											},
+											"direction": "ltr"
 										}
 									]
 								}
@@ -85,8 +119,8 @@
 							[
 								"socials_link",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "79f37213-b1a9-4b9f-b9ad-b2feb1bfffeb",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
 										"url": "https://slicemachine.dev",
@@ -95,6 +129,113 @@
 								}
 							]
 						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1546548970-71785318a17b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3Njg0Mjc4Njh8MA&ixlib=rb-4.1.0&q=85",
+									"alt": "flat lay photography of sliced pomegranate, lime, and lemon",
+									"origin": {
+										"id": "7r1HxvVC7AY",
+										"url": "https://images.unsplash.com/photo-1546548970-71785318a17b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3Njg0Mjc4Njh8MA&ixlib=rb-4.1.0&q=85",
+										"width": 3104,
+										"height": 4656
+									},
+									"width": 3104,
+									"height": 4656,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"socials_link",
+								{
+									"key": "03096d8c-2ad3-49da-909b-0a6b576175a6",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "AnyLink",
+										"kind": "any",
+										"text": "aaa"
+									}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"__TYPE__": "ImageContent",
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1597714026720-8f74c62310ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3Njg0Mjc4Njh8MA&ixlib=rb-4.1.0&q=85",
+									"alt": "orange fruits under blue sky during daytime",
+									"origin": {
+										"id": "eaOjEz8746k",
+										"url": "https://images.unsplash.com/photo-1597714026720-8f74c62310ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3Njg0Mjc4Njh8MA&ixlib=rb-4.1.0&q=85",
+										"width": 5688,
+										"height": 3792
+									},
+									"width": 5688,
+									"height": 3792,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"thumbnails": {}
+								}
+							]
+						]
+					}
+				]
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Quer melhorar sua empresa?",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 0,
+									"end": 26
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"sub": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Entre em contato!",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			}

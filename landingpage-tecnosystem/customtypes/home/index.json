@@ -64,6 +64,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "cta_footer": {
+              "type": "SharedSlice"
+            },
             "hero": {
               "type": "SharedSlice"
             },

@@ -96,7 +96,10 @@ export interface HomeDocumentDataNavigationItem {
   >;
 }
 
-type HomeDocumentDataSlicesSlice = HeroSlice | TestimonialsSlice;
+type HomeDocumentDataSlicesSlice =
+  | CtaFooterSlice
+  | HeroSlice
+  | TestimonialsSlice;
 
 type HomeDocumentDataSlices1Slice = TestimonialsSlice;
 
@@ -422,24 +425,24 @@ export interface CtaFooterSliceDefaultPrimarySocialsItem {
  */
 export interface CtaFooterSliceDefaultPrimary {
   /**
-   * title text field in *CtaFooter → Default → Primary*
+   * title field in *CtaFooter → Default → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: cta_footer.default.primary.title_text
-   * - **Documentation**: https://prismic.io/docs/fields/text
+   * - **API ID Path**: cta_footer.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  title_text: prismic.KeyTextField;
+  title: prismic.RichTextField;
 
   /**
-   * title sub field in *CtaFooter → Default → Primary*
+   * sub field in *CtaFooter → Default → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: cta_footer.default.primary.title_sub
-   * - **Documentation**: https://prismic.io/docs/fields/text
+   * - **API ID Path**: cta_footer.default.primary.sub
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  title_sub: prismic.KeyTextField;
+  sub: prismic.RichTextField;
 
   /**
    * form field in *CtaFooter → Default → Primary*

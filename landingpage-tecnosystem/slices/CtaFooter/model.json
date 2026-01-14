@@ -12,18 +12,22 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "title_text": {
-          "type": "Text",
+        "title": {
+          "type": "StructuredText",
           "config": {
-            "label": "title text",
-            "placeholder": ""
+            "label": "title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "title_sub": {
-          "type": "Text",
+        "sub": {
+          "type": "StructuredText",
           "config": {
-            "label": "title sub",
-            "placeholder": ""
+            "label": "sub",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
         "form": {
