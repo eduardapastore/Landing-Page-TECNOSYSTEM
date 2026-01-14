@@ -36,20 +36,27 @@ const Testimonials: FC<TestimonialsProps> = ({ slice }) => {
             field={slice.primary.testimonials_titulo}
             components={{
               paragraph: ({ children }) => (
-                <p className="text-black font-black text-xl">
+                <p className="text-black font-black text-3xl">
                   {children}
                 </p>
               ),
             }}
           />
-          <PrismicRichText field={slice.primary.testimonials_subtitulo} />
+          <PrismicRichText field={slice.primary.testimonials_subtitulo}  components={{
+              paragraph: ({ children }) => (
+                <p className="text-black text-xl">
+                  {children}
+                </p>
+              ),
+            }}
+            />
         </div>
       </div>
 
       {/* CONTEÚDO */}
-      <div className="flex gap-6 items-start">
+      <div className="flex gap-6 items-stretch">
         {/* CTA FIXO */}
-        <div className="p-6 bg-red-600 rounded-lg max-w-[320px] shrink-0">
+        <div className="p-6 bg-red-600 rounded-lg max-w-[320px]">
           <i className="bi bi-quote text-red-300 text-7xl block mb-4" />
           <PrismicRichText
             field={slice.primary.testimonials_cta}
@@ -64,10 +71,10 @@ const Testimonials: FC<TestimonialsProps> = ({ slice }) => {
         </div>
 
         {/* SLIDER + BOTÕES */}
-        <div className="flex-1 min-w-0 relative">
+        <div className="flex-1 min-w-0">
           {/* BOTÕES */}
           {isSlider && (
-            <div className="absolute -top-14 right-0 flex gap-3 z-10">
+            <div className="absolute -top-14 right-0 flex gap-2 z-10">
               <button
                 ref={prevRef}
                 className="w-10 h-10 text-4xl text-center self-center rounded-full bg-red-600 text-white flex items-center justify-center"
@@ -115,6 +122,7 @@ const Testimonials: FC<TestimonialsProps> = ({ slice }) => {
             <div className="grid md:grid-cols-2 gap-6">
               {testimonials.map((item, index) => (
                 <TestimonialCard key={index} item={item} />
+                
               ))}
             </div>
           )}
@@ -132,17 +140,27 @@ export default Testimonials;
 
 const TestimonialCard = ({ item }: any) => {
   return (
-    <div className="p-4 h-full">
-      <PrismicRichText
-        field={item.testimonial_text}
-        components={{
-          paragraph: ({ children }) => (
-            <p className="p-4 bg-gray-100 shadow-lg text-lg text-gray-900 text-justify mb-4">
-              {children}
-            </p>
-          ),
-        }}
-      />
+    <div className="p-4 w-[400px] h-full">
+      <div className="p-4 w-full min-h-[220px] bg-white shadow-lg rounded-lg mb-6">
+        <PrismicRichText
+          field={item.testimonial_text}
+          components={{
+            paragraph: ({ children }) => (
+              <p className="text-md text-gray-900 text-justify mb-2 line-clamp-10">
+                {children}
+              </p>
+            ),
+          }}
+        />
+
+        <div className="flex gap-1 text-red-600 text-xl">
+          <i className="bi bi-star-fill" />
+          <i className="bi bi-star-fill" />
+          <i className="bi bi-star-fill" />
+          <i className="bi bi-star-fill" />
+          <i className="bi bi-star-fill" />
+        </div>
+      </div>
 
       <div className="flex gap-4 items-center">
         <PrismicNextImage
@@ -168,3 +186,4 @@ const TestimonialCard = ({ item }: any) => {
     </div>
   );
 };
+

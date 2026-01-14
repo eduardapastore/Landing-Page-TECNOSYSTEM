@@ -16,7 +16,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="mr-24 ml-24"
+      className="mr-24 ml-24 mb-10"
     > 
     {/* Nome da Empresa */}
       <PrismicRichText field={slice.primary.nome_da_empresa} components={{
