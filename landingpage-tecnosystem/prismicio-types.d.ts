@@ -372,6 +372,36 @@ export type AllDocumentTypes =
   | TopicosDocument;
 
 /**
+ * Default variation for CtaFooter Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CtaFooterSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *CtaFooter*
+ */
+type CtaFooterSliceVariation = CtaFooterSliceDefault;
+
+/**
+ * CtaFooter Shared Slice
+ *
+ * - **API ID**: `cta_footer`
+ * - **Description**: CtaFooter
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CtaFooterSlice = prismic.SharedSlice<
+  "cta_footer",
+  CtaFooterSliceVariation
+>;
+
+/**
  * Item in *Hero → Default → Primary → Topicos Hero*
  */
 export interface HeroSliceDefaultPrimaryTopicosHeroItem {
@@ -638,6 +668,9 @@ declare module "@prismicio/client" {
       TopicosDocumentData,
       TopicosDocumentDataTextosItem,
       AllDocumentTypes,
+      CtaFooterSlice,
+      CtaFooterSliceVariation,
+      CtaFooterSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimaryTopicosHeroItem,
       HeroSliceDefaultPrimary,

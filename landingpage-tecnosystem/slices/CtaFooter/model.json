@@ -1,0 +1,16 @@
+{
+  "id": "cta_footer",
+  "type": "SharedSlice",
+  "name": "CtaFooter",
+  "description": "CtaFooter",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}
