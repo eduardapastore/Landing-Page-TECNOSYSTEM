@@ -372,6 +372,52 @@ export type AllDocumentTypes =
   | TopicosDocument;
 
 /**
+ * Item in *CtaFooter → Default → Primary → form*
+ */
+export interface CtaFooterSliceDefaultPrimaryFormItem {
+  /**
+   * text field in *CtaFooter → Default → Primary → form*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_footer.default.primary.form[].text
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Item in *CtaFooter → Default → Primary → socials*
+ */
+export interface CtaFooterSliceDefaultPrimarySocialsItem {
+  /**
+   * image field in *CtaFooter → Default → Primary → socials*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_footer.default.primary.socials[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * socials link field in *CtaFooter → Default → Primary → socials*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_footer.default.primary.socials[].socials_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  socials_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
  * Primary content in *CtaFooter → Default → Primary*
  */
 export interface CtaFooterSliceDefaultPrimary {
@@ -394,6 +440,38 @@ export interface CtaFooterSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   title_sub: prismic.KeyTextField;
+
+  /**
+   * form field in *CtaFooter → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_footer.default.primary.form[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  form: prismic.GroupField<Simplify<CtaFooterSliceDefaultPrimaryFormItem>>;
+
+  /**
+   * button field in *CtaFooter → Default → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_footer.default.primary.button
+   * - **Documentation**: https://prismic.io/docs/fields/link-to-media
+   */
+  button: prismic.LinkToMediaField<prismic.FieldState, never>;
+
+  /**
+   * socials field in *CtaFooter → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_footer.default.primary.socials[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  socials: prismic.GroupField<
+    Simplify<CtaFooterSliceDefaultPrimarySocialsItem>
+  >;
 }
 
 /**
@@ -694,6 +772,8 @@ declare module "@prismicio/client" {
       TopicosDocumentDataTextosItem,
       AllDocumentTypes,
       CtaFooterSlice,
+      CtaFooterSliceDefaultPrimaryFormItem,
+      CtaFooterSliceDefaultPrimarySocialsItem,
       CtaFooterSliceDefaultPrimary,
       CtaFooterSliceVariation,
       CtaFooterSliceDefault,

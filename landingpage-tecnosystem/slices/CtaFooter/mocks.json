@@ -12,6 +12,91 @@
 				"__TYPE__": "FieldContent",
 				"value": "his",
 				"type": "Text"
+			},
+			"form": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"text",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Lorem fugiat do dolore ea cillum officia exercitation in deserunt consectetur. Aliqua excepteur irure occaecat occaecat ad velit elit. Lorem occaecat exercitation ut deserunt proident."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"button": {
+				"key": "49f3433d-5927-4f82-a570-c5d46eb31d72",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "FileLink",
+					"id": "mock_Media_link",
+					"kind": "file",
+					"name": "mock_name",
+					"url": "https://source.unsplash.com/daily",
+					"size": "0",
+					"text": "if"
+				}
+			},
+			"socials": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
+										"width": 3958,
+										"height": 3958
+									},
+									"url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
+									"width": 3958,
+									"height": 3958,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "recognize",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"socials_link",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "79f37213-b1a9-4b9f-b9ad-b2feb1bfffeb",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "earth"
+									}
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		"items": []
