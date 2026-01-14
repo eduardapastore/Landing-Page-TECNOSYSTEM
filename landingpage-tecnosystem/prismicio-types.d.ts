@@ -375,21 +375,6 @@ export type AllDocumentTypes =
   | TopicosDocument;
 
 /**
- * Item in *CtaFooter → Default → Primary → form*
- */
-export interface CtaFooterSliceDefaultPrimaryFormItem {
-  /**
-   * text field in *CtaFooter → Default → Primary → form*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: cta_footer.default.primary.form[].text
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  text: prismic.RichTextField;
-}
-
-/**
  * Item in *CtaFooter → Default → Primary → socials*
  */
 export interface CtaFooterSliceDefaultPrimarySocialsItem {
@@ -443,16 +428,6 @@ export interface CtaFooterSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   sub: prismic.RichTextField;
-
-  /**
-   * form field in *CtaFooter → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: cta_footer.default.primary.form[]
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
-   */
-  form: prismic.GroupField<Simplify<CtaFooterSliceDefaultPrimaryFormItem>>;
 
   /**
    * button field in *CtaFooter → Default → Primary*
@@ -775,7 +750,6 @@ declare module "@prismicio/client" {
       TopicosDocumentDataTextosItem,
       AllDocumentTypes,
       CtaFooterSlice,
-      CtaFooterSliceDefaultPrimaryFormItem,
       CtaFooterSliceDefaultPrimarySocialsItem,
       CtaFooterSliceDefaultPrimary,
       CtaFooterSliceVariation,
