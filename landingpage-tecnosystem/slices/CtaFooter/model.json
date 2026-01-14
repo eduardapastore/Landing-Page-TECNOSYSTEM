@@ -10,7 +10,24 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {
+        "title_text": {
+          "type": "Text",
+          "config": {
+            "label": "title text",
+            "placeholder": ""
+          }
+        },
+        "title_sub": {
+          "type": "Text",
+          "config": {
+            "label": "title sub",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

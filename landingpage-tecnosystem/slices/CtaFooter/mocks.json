@@ -2,7 +2,18 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"title_text": {
+				"__TYPE__": "FieldContent",
+				"value": "bar",
+				"type": "Text"
+			},
+			"title_sub": {
+				"__TYPE__": "FieldContent",
+				"value": "his",
+				"type": "Text"
+			}
+		},
 		"items": []
 	}
 ]
