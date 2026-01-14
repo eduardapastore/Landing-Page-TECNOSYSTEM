@@ -13,3 +13,11 @@ body,html{
 .font-righteous {
   font-family: "Righteous", sans-serif;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: red;
+  font-weight: bold;
+  color: white;
+  z-index: 20;
+}

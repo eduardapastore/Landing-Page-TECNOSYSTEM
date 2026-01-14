@@ -9,7 +9,7 @@ const Header = async () => {
     const page = await client.getSingle("home").catch(() => notFound());
     
   return (
-    <div className="m-10 flex justify-between font-dm">  
+    <div className="p-14 flex justify-between font-dm align-middle items-center">  
         {/* importando título da página para teste */}
         <div className="font-black text-black text-2xl flex gap-6 items-center">
             <PrismicNextImage field={page.data.tslogo} alt="" width={80}/>
@@ -20,7 +20,7 @@ const Header = async () => {
                   {/* Navigation links */}
                   {/* chama o item de navegação e escolhe o index(link) e a info(label) */}
                   {page.data.navigation.map((link, label) => (
-                      <li className="transition-all duration-300 text-xl uppercase ease-in-out hover:text-xl hover:text-red-600" key={label}>
+                      <li className="transition-all duration-300 text-xl uppercase ease-initial hover:text-red-600" key={label}>
                           <PrismicNextLink field={link.link[0]}>{link.label}</PrismicNextLink>
                       </li>
                   ))

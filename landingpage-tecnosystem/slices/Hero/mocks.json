@@ -10,7 +10,13 @@
 						"type": "heading1",
 						"content": {
 							"text": "TRANSFORMANDO IDEIAS EM TECNOLOGIA",
-							"spans": []
+							"spans": [
+								{
+									"type": "strong",
+									"start": 24,
+									"end": 34
+								}
+							]
 						},
 						"direction": "ltr"
 					}

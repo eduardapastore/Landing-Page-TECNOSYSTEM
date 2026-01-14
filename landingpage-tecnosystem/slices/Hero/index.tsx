@@ -16,7 +16,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="m-20"
+      className="mr-24 ml-24"
     > 
     {/* Nome da Empresa */}
       <PrismicRichText field={slice.primary.nome_da_empresa} components={{
@@ -56,7 +56,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 
 
       {/* botão contate-nos */}
-      <div className="flex gap-2 mt-6 text-md text-lg font-bold text-white">
+      <div className="flex gap-2 mt-6 text-md text-xl font-bold text-white">
       <PrismicNextLink field={slice.primary.button_contate} className="p-3 pr-4 pl-4 bg-red-600 rounded-md" />
       <PrismicNextLink field={slice.primary.button_saibamais} className="p-3 pr-4 pl-4 border border-red-600 text-red-600 rounded-md" />
       </div>

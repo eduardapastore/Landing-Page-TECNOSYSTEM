@@ -483,36 +483,94 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *Testimonials → Default → Primary → testimonial*
+ */
+export interface TestimonialsSliceDefaultPrimaryTestimonialItem {
+  /**
+   * Testimonial text field in *Testimonials → Default → Primary → testimonial*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.default.primary.testimonial[].testimonial_text
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  testimonial_text: prismic.RichTextField;
+
+  /**
+   * Testimonial img field in *Testimonials → Default → Primary → testimonial*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.default.primary.testimonial[].testimonial_img
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  testimonial_img: prismic.ImageField<never>;
+
+  /**
+   * testimonial user field in *Testimonials → Default → Primary → testimonial*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.default.primary.testimonial[].testimonial_user
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  testimonial_user: prismic.RichTextField;
+
+  /**
+   * testimonial empresa field in *Testimonials → Default → Primary → testimonial*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.default.primary.testimonial[].testimonial_empresa
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  testimonial_empresa: prismic.RichTextField;
+}
+
+/**
  * Primary content in *Testimonials → Default → Primary*
  */
 export interface TestimonialsSliceDefaultPrimary {
   /**
-   * Topic Title field in *Testimonials → Default → Primary*
+   * Testimonials Titulo field in *Testimonials → Default → Primary*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.default.primary.topic_title
-   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   * - **API ID Path**: testimonials.default.primary.testimonials_titulo
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  topic_title: ContentRelationshipFieldWithData<
-    [{ id: "topic"; fields: ["title", "subtitle"] }]
-  >;
+  testimonials_titulo: prismic.RichTextField;
 
   /**
-   * Testimonial field in *Testimonials → Default → Primary*
+   * Testimonials Subtitulo field in *Testimonials → Default → Primary*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.default.primary.testimonial
-   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   * - **API ID Path**: testimonials.default.primary.testimonials_subtitulo
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  testimonial: ContentRelationshipFieldWithData<
-    [
-      {
-        id: "testimonials";
-        fields: ["name", "enterprise_name", "quote", "avatar"];
-      },
-    ]
+  testimonials_subtitulo: prismic.RichTextField;
+
+  /**
+   * Testimonials CTA field in *Testimonials → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.default.primary.testimonials_cta
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  testimonials_cta: prismic.RichTextField;
+
+  /**
+   * testimonial field in *Testimonials → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.default.primary.testimonial[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  testimonial: prismic.GroupField<
+    Simplify<TestimonialsSliceDefaultPrimaryTestimonialItem>
   >;
 }
 
@@ -586,6 +644,7 @@ declare module "@prismicio/client" {
       HeroSliceVariation,
       HeroSliceDefault,
       TestimonialsSlice,
+      TestimonialsSliceDefaultPrimaryTestimonialItem,
       TestimonialsSliceDefaultPrimary,
       TestimonialsSliceVariation,
       TestimonialsSliceDefault,
