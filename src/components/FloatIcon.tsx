@@ -13,7 +13,7 @@ const FloatIcon = async () => {
 
   return (
     <div className="flex flex-col w-1/2 gap-5">
-      {whatsappArray.map((item: any, index: number) => (
+      {whatsappArray.map((item, index) => (
         <PrismicNextLink
           key={index}
           field={item.link}
