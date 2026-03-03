@@ -8,12 +8,12 @@ const ICON: Record<string, ReactNode> = {
 };
 const FloatIcon = async () => {
   const client = createClient();
-  const floatwpp = await client.getSingle("floatwpp");
+  const floatwpp: any = await client.getSingle("floatwpp" as any);
   const whatsappArray = floatwpp.data.whatsapp;
 
   return (
     <div className="flex flex-col w-1/2 gap-5">
-      {whatsappArray.map((item, index) => (
+      {whatsappArray.map((item: any, index: number) => (
         <PrismicNextLink
           key={index}
           field={item.link}
