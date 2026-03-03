@@ -1,11 +1,5 @@
 {
   "buildCommand": "npm run build",
   "installCommand": "npm install",
-  "framework": "nextjs",
-  "env": {
-    "NEXT_PUBLIC_PRISMIC_ENVIRONMENT": "@prismic_environment",
-    "NEXT_PUBLIC_EMAILJS_SERVICE_ID": "@emailjs_service_id",
-    "NEXT_PUBLIC_EMAILJS_TEMPLATE_ID": "@emailjs_template_id",
-    "NEXT_PUBLIC_EMAILJS_PUBLIC_KEY": "@emailjs_public_key"
-  }
+  "framework": "nextjs"
 }
