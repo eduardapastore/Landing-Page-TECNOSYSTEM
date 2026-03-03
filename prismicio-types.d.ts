@@ -195,18 +195,64 @@ export type FooterDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *home → navigation*
+ */
+export interface HomeDocumentDataNavigationItem {
+  /**
+   * link field in *home → navigation*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.navigation[].link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * label field in *home → navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.navigation[].label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  label: prismic.KeyTextField;
+}
+
 type HomeDocumentDataSlicesSlice =
   | ContactSectionSlice
   | ProjectSectionSlice
   | ServiceSectionSlice
   | HeaderSectionSlice
-  | TestimonialSectionSlice
   | AboutSectionSlice;
 
 /**
  * Content for home documents
  */
 interface HomeDocumentData {
+  /**
+   * tslogo field in *home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.tslogo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  tslogo: prismic.ImageField<never>;
+
+  /**
+   * navigation field in *home*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.navigation[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  navigation: prismic.GroupField<Simplify<HomeDocumentDataNavigationItem>>;
+
   /**
    * Slice Zone field in *home*
    *
@@ -863,6 +909,46 @@ export type ServiceSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *StackSection → Default → Primary*
+ */
+export interface StackSectionSliceDefaultPrimary {
+  /**
+   * Título da Secção field in *StackSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Ex: Nossas Tecnologias
+   * - **API ID Path**: stack_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *StackSection → Items*
+ */
+export interface StackSectionSliceDefaultItem {
+  /**
+   * Nome da Tecnologia field in *StackSection → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Ex: React, Node.js, Figma...
+   * - **API ID Path**: stack_section.items[].tech_name
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  tech_name: prismic.KeyTextField;
+
+  /**
+   * Logótipo da Tecnologia field in *StackSection → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stack_section.items[].tech_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  tech_image: prismic.ImageField<never>;
+}
+
+/**
  * Default variation for StackSection Slice
  *
  * - **API ID**: `default`
@@ -871,8 +957,8 @@ export type ServiceSectionSlice = prismic.SharedSlice<
  */
 export type StackSectionSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
-  never
+  Simplify<StackSectionSliceDefaultPrimary>,
+  Simplify<StackSectionSliceDefaultItem>
 >;
 
 /**
@@ -884,82 +970,12 @@ type StackSectionSliceVariation = StackSectionSliceDefault;
  * StackSection Shared Slice
  *
  * - **API ID**: `stack_section`
- * - **Description**: StackSection
+ * - **Description**: Secção de Tecnologias (Stack)
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type StackSectionSlice = prismic.SharedSlice<
   "stack_section",
   StackSectionSliceVariation
->;
-
-/**
- * Primary content in *TestimonialSection → Default → Primary*
- */
-export interface TestimonialSectionSliceDefaultPrimary {
-  /**
-   * Título da Secção field in *TestimonialSection → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Ex: O que dizem sobre nós
-   * - **API ID Path**: testimonial_section.default.primary.title
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  title: prismic.RichTextField;
-}
-
-/**
- * Primary content in *TestimonialSection → Items*
- */
-export interface TestimonialSectionSliceDefaultItem {
-  /**
-   * Nome do Cliente field in *TestimonialSection → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Ex: João Silva
-   * - **API ID Path**: testimonial_section.items[].client_name
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  client_name: prismic.KeyTextField;
-
-  /**
-   * Texto do Depoimento field in *TestimonialSection → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Escreva o depoimento aqui...
-   * - **API ID Path**: testimonial_section.items[].testimonial_text
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  testimonial_text: prismic.RichTextField;
-}
-
-/**
- * Default variation for TestimonialSection Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slices
- */
-export type TestimonialSectionSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<TestimonialSectionSliceDefaultPrimary>,
-  Simplify<TestimonialSectionSliceDefaultItem>
->;
-
-/**
- * Slice variation for *TestimonialSection*
- */
-type TestimonialSectionSliceVariation = TestimonialSectionSliceDefault;
-
-/**
- * TestimonialSection Shared Slice
- *
- * - **API ID**: `testimonial_section`
- * - **Description**: Secção de Depoimentos dos Clientes
- * - **Documentation**: https://prismic.io/docs/slices
- */
-export type TestimonialSectionSlice = prismic.SharedSlice<
-  "testimonial_section",
-  TestimonialSectionSliceVariation
 >;
 
 declare module "@prismicio/client" {
@@ -991,6 +1007,7 @@ declare module "@prismicio/client" {
       FooterDocumentDataSocialItem,
       HomeDocument,
       HomeDocumentData,
+      HomeDocumentDataNavigationItem,
       HomeDocumentDataSlicesSlice,
       NavbarDocument,
       NavbarDocumentData,
@@ -1021,13 +1038,10 @@ declare module "@prismicio/client" {
       ServiceSectionSliceVariation,
       ServiceSectionSliceDefault,
       StackSectionSlice,
+      StackSectionSliceDefaultPrimary,
+      StackSectionSliceDefaultItem,
       StackSectionSliceVariation,
       StackSectionSliceDefault,
-      TestimonialSectionSlice,
-      TestimonialSectionSliceDefaultPrimary,
-      TestimonialSectionSliceDefaultItem,
-      TestimonialSectionSliceVariation,
-      TestimonialSectionSliceDefault,
     };
   }
 }

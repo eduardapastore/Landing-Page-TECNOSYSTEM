@@ -28,7 +28,7 @@ const StackSection = ({ slice }: StackSectionProps) => {
               {/* Logótipo da Tecnologia */}
               <div className="w-16 h-16 relative mb-4">
                 <PrismicNextImage 
-                  field={item.tech_image} 
+                  field={item.tech_image as any} 
                   fallbackAlt=""
                   fill
                   className="object-contain"
