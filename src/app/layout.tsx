@@ -1,46 +1,27 @@
-import React from "react";
-// Styles
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { Inter, Righteous } from "next/font/google";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import NavBar from "@/components/NavBar";
-import { createClient } from "@/prismicio";
-import FloatIcon from "@/components/FloatIcon";
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
+const inter = Inter({ subsets: ["latin"] });
 
-const righteous = Righteous({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-righteous",
-  weight: "400",
-});
+export const metadata: Metadata = {
+  title: "Tecno System",
+  description: "Empresa Júnior de TI",
+};
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
-  const client = createClient();
-  const navBar = await client.getSingle("navbar").catch(() => null);
-
-
+}>) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${inter.variable} ${righteous.variable} text-black m-0 p-0 bg-gray-alt`}
-    >
-      <body>
-        {navBar && <NavBar navBar={navBar} />}
-        <FloatIcon/>
-        <div className="mx-auto container px-4 uppercase w-full">
-          {children}
-        </div>
-        <Footer/>
+    <html lang="pt-BR">
+      <body className={inter.className}>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
